@@ -1,0 +1,25 @@
+{
+  "name": "expense-tracker",
+  "version": "1.0.0",
+  "description": "Expense Tracker, an educational full-stack project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "dev:watch": "ts-node-dev --respawn --clear --transpile-only --watch src src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecepinskas-godeltech/expense-tracker.git"
+  },
+  "author": "Elvis Cepinskas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ecepinskas-godeltech/expense-tracker/issues"
+  },
+  "homepage": "https://github.com/ecepinskas-godeltech/expense-tracker#readme",
+  "dependencies": {
+    "ts-node-dev": "^2.0.0"
+  }
+}
