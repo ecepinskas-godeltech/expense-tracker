@@ -7,7 +7,7 @@ export class ExpensesController {
     try {
       const { name, amount, currency, category, date } = req.body;
 
-      const result = expensesService.addExpense({
+      const result = await expensesService.addExpense({
         name,
         amount,
         currency,
@@ -29,7 +29,7 @@ export class ExpensesController {
   // GET - GET ALL EXPENSES
   async getAllExpenses(req: Request, res: Response): Promise<void> {
     try {
-      const expenses = expensesService.getAllExpenses();
+      const expenses = await expensesService.getAllExpenses();
       res.json({
         count: expenses.length,
         expenses,

@@ -1,30 +1,29 @@
-import database from '../db/db.service';
-import { ExpenseSchema } from '../db/db.service';
+import { PrismaClient } from '../generated/prisma';
 
-// TALKING TO DB
+const prisma = new PrismaClient();
+
+export interface ExpenseData {
+  name: string;
+  amount: number;
+  currency: string;
+  category: string;
+  date?: Date;
+}
+
 export class ExpensesRepository {
   // INSERT ONE
-  insertExpense(expense: Omit<ExpenseSchema, 'id'>): number {
-    const insertExpense = database.prepare(
-      'INSERT INTO expenses (name, amount, currency, category, date) VALUES (?, ?, ?, ?, ?)',
-    );
-
-    const result = insertExpense.run(
-      expense.name,
-      expense.amount,
-      expense.currency,
-      expense.category,
-      expense.date,
-    );
-
-    return result.lastInsertRowid as number;
+  async insertExpense(expense: Omit<ExpenseData, 'id'>): Promise<number> {
+    const result = await prisma.expense.create({
+      data: expense,
+    });
+    return result.id;
   }
 
   // SELECT ALL
-  selectAllExpenses(): ExpenseSchema[] {
-    const selectAllExpenses = database.prepare('SELECT * FROM expenses');
-
-    return selectAllExpenses.all() as ExpenseSchema[];
+  async selectAllExpenses() {
+    return await prisma.expense.findMany({
+      orderBy: { date: 'desc' },
+    });
   }
 }
 

@@ -1,12 +1,11 @@
-import { expensesRepository } from './expenses.repository';
-import { ExpenseSchema } from '../db/db.service';
+import { expensesRepository, ExpenseData } from './expenses.repository';
 
 // TALKING TO BL
 export class ExpensesService {
-  addExpense(expenseData: Omit<ExpenseSchema, 'id'>): {
+  async addExpense(expenseData: Omit<ExpenseData, 'id'>): Promise<{
     id: number;
     success: boolean;
-  } {
+  }> {
     if (expenseData.amount <= 0) {
       throw new Error('Amount must be greater than 0');
     }
@@ -18,7 +17,7 @@ export class ExpensesService {
     }
 
     try {
-      const id = expensesRepository.insertExpense(expenseData);
+      const id = await expensesRepository.insertExpense(expenseData);
       return { id, success: true };
     } catch (error) {
       console.error('Error adding expense:', error);
@@ -26,9 +25,13 @@ export class ExpensesService {
     }
   }
 
-  getAllExpenses(): ExpenseSchema[] {
+  async getAllExpenses(): Promise<ExpenseData[]> {
     try {
-      return expensesRepository.selectAllExpenses();
+      const expenses = await expensesRepository.selectAllExpenses();
+      return expenses.map((expense) => ({
+        ...expense,
+        amount: expense.amount ?? 0,
+      }));
     } catch (error) {
       console.error('Error fetching expenses:', error);
       throw new Error('Failed to fetch expenses');
