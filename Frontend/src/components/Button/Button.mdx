@@ -1,0 +1,31 @@
+### Button Component
+
+Button component for any on click action with configurable options.
+
+### Features
+
+- Dynamic prop options are: Primary Active; Primary Disabled; Ghost Active; Ghost Disabled.
+- Has a props to change text, aria label.
+
+### Usage
+
+To use the button, simply import and use component in specified area, add props based on needs:
+
+```tsx
+import { Button } from './components/Button';
+
+function App() {
+  return (
+    <>
+      <Button
+        text="Sign in"
+        aria="Ghost disabled button"
+        disabled={true}
+        type="ghost"
+      />{' '}
+    </>
+  );
+}
+
+export default App;
+```

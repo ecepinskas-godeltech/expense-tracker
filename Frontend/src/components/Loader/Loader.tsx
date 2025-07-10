@@ -1,7 +1,7 @@
 import styles from './Loader.module.css';
 
 interface LoaderProps {
-  size: string;
+  size: number;
 }
 
 export default function Loader({ size }: LoaderProps) {
@@ -9,7 +9,7 @@ export default function Loader({ size }: LoaderProps) {
     <div
       className={styles.loader}
       style={{
-        transform: `scale(${isNaN(parseFloat(size)) ? 1 : parseFloat(size)})`,
+        transform: `scale(${isNaN(size) ? 1 : size})`,
       }}
     >
       <span className={styles['capsule-1']}>&nbsp;</span>

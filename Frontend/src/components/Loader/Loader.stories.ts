@@ -9,4 +9,8 @@ const meta: Meta<typeof Loader> = {
 export default meta;
 type Story = StoryObj<typeof Loader>;
 
-export const Original: Story = {};
+export const Original: Story = {
+  args: {
+    size: 1,
+  },
+};
