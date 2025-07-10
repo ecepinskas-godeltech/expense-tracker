@@ -7,7 +7,6 @@ const meta: Meta<typeof Logo> = {
 };
 
 export default meta;
-/** asdfasdfas */
 type Story = StoryObj<typeof Logo>;
 
 export const Original: Story = {};

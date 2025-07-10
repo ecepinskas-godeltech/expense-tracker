@@ -1,0 +1,26 @@
+### Loader Component
+
+Loader component is used to improve UX, gives seamless experience while waiting for a specific actions like loading (fetching list from database).
+
+### Features
+
+- Written in CSS (scaling will not lose quality).
+- Has a prop `size` which can be used to change size in place.
+
+### Usage
+
+To use the loader, simply import and use component in specified area, add prop to adjust size in place:
+
+```tsx
+import { Loader } from './components/Loader';
+
+function App() {
+  return (
+    <>
+      <Loader size="0.7" />
+    </>
+  );
+}
+
+export default App;
+```
