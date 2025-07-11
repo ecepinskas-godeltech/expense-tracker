@@ -1,0 +1,26 @@
+### Input Label Component
+
+Input label component, used for adding label or caption next to input fields.
+
+### Features
+
+- Dynamic prop options are: Label; Caption.
+- Has a prop to change type of the label, whether it a label or a caption (color difference).
+
+### Usage
+
+To use the input label, simply import and use component next to your inputs, use `htmtFor` prop to tie it up with your inputs:
+
+```tsx
+import { InputLabel } from './components/InputLabel';
+
+function App() {
+  return (
+    <>
+      <InputLabel text="Password" htmlFor="password" type="label" />
+    </>
+  );
+}
+
+export default App;
+```

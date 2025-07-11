@@ -12,7 +12,7 @@
 .capsule-6,
 .capsule-7,
 .capsule-8 {
-  background-color: #8e93a1;
+  background-color: var(--color-strong-gray);
   width: 10px;
   height: 4px;
   position: absolute;

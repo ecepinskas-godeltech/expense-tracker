@@ -1,6 +1,7 @@
 import { Logo } from './components/Logo';
 import { Loader } from './components/Loader';
 import { Button } from './components/Button';
+import { InputLabel } from './components/InputLabel';
 
 function App() {
   const buttonClick = () => {
@@ -39,6 +40,8 @@ function App() {
         type="ghost"
         onClick={buttonClick}
       />
+      <InputLabel text="Label" htmlFor="input" type="label" />
+      <InputLabel text="Caption" htmlFor="input" type="caption" />
     </>
   );
 }
