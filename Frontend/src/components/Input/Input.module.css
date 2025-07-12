@@ -1,0 +1,26 @@
+.input {
+  width: 20.4rem; /* 327px/16 */
+  height: 2.75rem; /* 44px/16 */
+  padding: 0.75rem;
+  border-radius: 16px;
+  border: 1px solid var(--color-mid-gray);
+  font: inherit;
+}
+
+.input,
+.input::placeholder {
+  color: var(--color-mid-gray);
+}
+
+.input:focus,
+.input:focus::placeholder {
+  color: var(--color-black);
+  outline: none;
+}
+
+.warning {
+  color: var(--color-warning);
+  padding: 0.4rem 0;
+  font-size: 0.75rem;
+  font-weight: bold;
+}

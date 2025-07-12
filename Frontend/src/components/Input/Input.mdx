@@ -1,0 +1,36 @@
+### Input Component
+
+Input component, used for receiving input data.
+
+### Features
+
+- Dynamic prop options are: Label; Caption.
+- Has a props `helperTextType` and `helperText` to change helping text and color of the helper text to look like label or a caption (color difference).
+
+### Usage
+
+To use the input, simply import and use component to capture inputs:
+
+```tsx
+import { Input } from './components/Input';
+
+function App() {
+  return (
+    <>
+      <Input
+        type="text"
+        name="test"
+        placeholder="Text input"
+        aria="Input field for title"
+        defaultValue=""
+        onChange={onInputChange}
+        helperText="Enter your name"
+        helperTextType="caption"
+        errorMessage="Field can not be empty"
+      />
+    </>
+  );
+}
+
+export default App;
+```

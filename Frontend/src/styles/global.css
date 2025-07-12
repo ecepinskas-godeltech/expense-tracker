@@ -11,8 +11,14 @@ body {
 :root {
   --color-main: #3629b7;
   --color-white: #fff;
+  --color-black: #343434;
   --color-strong-gray: #979797;
   --color-mid-gray: #cacaca;
   --color-weak-gray: #f2f1f9;
   --color-warning: #ff4267;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
 }
