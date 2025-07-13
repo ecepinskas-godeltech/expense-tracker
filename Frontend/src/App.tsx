@@ -3,6 +3,7 @@ import { Loader } from './components/Loader';
 import { Button } from './components/Button';
 import { InputLabel } from './components/InputLabel';
 import { Input } from './components/Input';
+import { Icon } from './components/Icon';
 import { onInputChange } from './utils/onInputChange';
 import { onButtonClick } from './utils/onButtonClick';
 
@@ -52,6 +53,7 @@ function App() {
         helperTextType="caption"
         errorMessage="Field can not be empty"
       />
+      <Icon iconName="Bell" />
     </>
   );
 }

@@ -1,0 +1,33 @@
+### Icon Component
+
+Icon component, used for displaying icons within the web application.
+
+### Features
+
+- Dynamic `iconName` prop options to change the icon.
+- Props `size` and `color` to change the color and size.
+- Aria label prop `aria` for accessibility.
+
+### Usage
+
+To use the icon, specify `iconName` that is correlated to your desired icon. Color can be "hard-coded" or chosen from predefined color variables in `~/styles/globals.css`, by default color is `--color-icon-default: #898989;`, default size is `2rem`.
+
+To use predefined colors, define from the computed styles, as listed below with example variable `colorWarning`:
+
+```tsx
+import { Icon } from './components/Icon';
+
+const colorWarning = getComputedStyle(document.documentElement)
+  .getPropertyValue('--color-warning')
+  .trim();
+
+function App() {
+  return (
+    <>
+      <Icon iconName="Bell" aria="Bell icon" size={1} color={colorWarning} />
+    </>
+  );
+}
+
+export default App;
+```

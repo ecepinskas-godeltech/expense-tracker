@@ -4,7 +4,7 @@ import Input from './Input';
 import { onInputChange } from '@/utils/onInputChange';
 
 describe('Input Component', () => {
-  it('displays input label based on specified props', () => {
+  it('displays input based on specified props', () => {
     render(
       <Input
         type="text"

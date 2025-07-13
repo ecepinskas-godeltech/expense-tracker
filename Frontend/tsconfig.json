@@ -6,6 +6,6 @@
   ],
   "compilerOptions": {
     "strict": true,
-    "types": ["jest"]
+    "types": ["jest", "vite-plugin-svgr/client"]
   }
 }
